@@ -1,3 +1,8 @@
+Aquí tienes el **`README.md`** completamente actualizado y estructurado con un formato profesional, listo para documentar la arquitectura modular, el nuevo módulo de **Control de Cambios** y las capacidades completas de **T.o.p.s Flow**.
+
+---
+
+```markdown
 # ⚡ T.o.p.s Flow • Ecosistema de Planificación Inteligente
 
 > **Organiza, Gestiona & Optimiza.**
@@ -74,3 +79,61 @@ tops-flow/
     ├── gantt.js
     ├── informes.js
     └── changelog.js
+
+```
+
+---
+
+## 🚀 Instalación y Uso
+
+No requiere compiladores, transpiladores ni instalación de dependencias vía Node/NPM.
+
+1. **Clonar el repositorio:**
+```bash
+git clone [https://github.com/Alphareone/TopsFlow.git](https://github.com/Alphareone/TopsFlow.git)
+
+```
+
+
+2. **Navegar al directorio:**
+```bash
+cd TopsFlow
+
+```
+
+
+3. **Ejecutar el proyecto:**
+Abre el archivo `index.html` en tu navegador de preferencia o utilízalo mediante una extensión de servidor local como *Live Server* en VS Code.
+
+---
+
+## 📜 Historial de Versiones (Changelog Resumido)
+
+### 🚀 **v1.1.0** — *Agosto 2026 (En Desarrollo)*
+
+* **Nuevo Módulo:** Se integró el **Control de Cambios & Bitácora de Versiones** (`changelog`).
+* **Nuevo Módulo:** Integración del **Archivero de Informes** (`informes`) con soporte para persistencia local y Google Drive.
+* **UI/UX:** Reestructuración del flujo DOM global integrando el `app-footer` dentro del contenedor principal reescalable.
+
+### 🎉 **v1.0.0** — *15 Agosto 2026 (Lanzamiento Estable)*
+
+* Despliegue del núcleo **SPA** con router dinámico de módulos.
+* Modulos iniciales: **Horario Semestral**, **Tablero Kanban**, **Calendario** y **Proyectos**.
+* Motor de temas con soporte para 5 paletas predefinidas y 1 modo 100% personalizable.
+
+---
+
+## 👥 Desarrollo & Créditos
+
+Diseñado e implementado con pasión por:
+
+* 💻 **Alphareone** — *Arquitectura & Desarrollo Lead*
+* ⚡ **Gemini Core Engine** — *Co-piloto de Inteligencia Artificial & Optimización*
+
+---
+
+© 2026 **T.o.p.s Flow Dev Team**. Todos los derechos reservados.
+
+```
+
+```

@@ -126,8 +126,6 @@ Diseñado e implementado con pasión por:
 * 💻 **Alphareone** — *Arquitectura & Desarrollo Lead*
 * ⚡ **Gemini Core Engine** — *Co-piloto de Inteligencia Artificial & Optimización*
 
----
-
 © 2026 **T.o.p.s Flow Dev Team**. Todos los derechos reservados.
 
 ```

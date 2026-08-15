@@ -39,11 +39,15 @@
         </button>
         <button class="nav-tab" data-module="gantt">
           <i data-lucide="bar-chart-horizontal"></i>
-          <span>4. Diagrama Gantt</span>
+          <span>4. Proyectos</span>
         </button>
         <button class="nav-tab" data-module="plantillas">
           <i data-lucide="folder-archive"></i>
           <span>5. Archivero de Informes</span>
+        </button>
+        <button class="nav-tab" data-module="changelog">
+          <i data-lucide="history"></i>
+          <span>6. Registro de Cambios</span>
         </button>
       </nav>
 
@@ -111,4 +115,46 @@
 
   <script src="app.js"></script>
 </body>
+<footer class="app-footer">
+  <div class="footer-container">
+    
+    <!-- COLUMNA 1: IDENTIDAD DEL SOFTWARE -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <i data-lucide="zap"></i>
+        <span>T.o.p.s Flow</span>
+      </div>
+      <p class="footer-tagline">
+        Ecosistema modular de alta eficiencia diseñado para la optimización del tiempo académico y profesional.
+      </p>
+    </div>
+
+    <!-- COLUMNA 2: CRÉDITOS Y EQUIPO -->
+    <div class="footer-team">
+      <span class="footer-section-title">Desarrollo & Arquitectura</span>
+      <p class="team-members">
+        Diseñado e implementado por <strong>Alphareone</strong> & <strong>Gemini Core Engine</strong>.
+      </p>
+      <div class="footer-status">
+        <span class="status-dot"></span> Sistema Operativo • v2.0.0
+      </div>
+    </div>
+
+    <!-- COLUMNA 3: ENLACES RÁPIDOS Y REPOSICIONAMIENTO -->
+    <div class="footer-links">
+      <span class="footer-section-title">Recursos</span>
+      <a href="https://github.com/Alphareone/TopsFlow.git" target="_blank" rel="noopener noreferrer" class="footer-link">
+        <i data-lucide="github"></i> Repositorio GitHub
+      </a>
+      <a href="#" class="footer-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        <i data-lucide="arrow-up"></i> Volver al inicio
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 T.o.p.s Flow Dev Team. Todos los derechos reservados.</p>
+  </div>
+</footer>
 </html>

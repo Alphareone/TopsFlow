@@ -1,0 +1,114 @@
+<section id="tab-kanban" class="module-section active">
+  <header class="module-header">
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div>
+        <h2><i data-lucide="kanban"></i> Gestión Ágil (Kanban)</h2>
+        <p>Organiza tus tareas en etapas, asigna prioridades y mide los puntos de esfuerzo.</p>
+      </div>
+      <button class="btn btn-primary" style="width: auto;" onclick="openKanbanModal()">
+        <i data-lucide="plus-circle"></i> Nueva Tarjeta
+      </button>
+    </div>
+  </header>
+
+  <div class="module-body">
+    <!-- TABLERO KANBAN DE 3 ETAPAS -->
+    <div class="kanban-board">
+      
+      <!-- COLUMNA 1: POR HACER -->
+      <div class="kanban-column" data-status="todo">
+        <div class="column-header">
+          <span class="status-dot dot-todo"></span>
+          <h3>Por Hacer</h3>
+          <span class="task-badge" id="count-todo">0</span>
+        </div>
+        <div class="kanban-cards-container" id="cards-todo"></div>
+      </div>
+
+      <!-- COLUMNA 2: EN DESARROLLO -->
+      <div class="kanban-column" data-status="progress">
+        <div class="column-header">
+          <span class="status-dot dot-progress"></span>
+          <h3>En Desarrollo</h3>
+          <span class="task-badge" id="count-progress">0</span>
+        </div>
+        <div class="kanban-cards-container" id="cards-progress"></div>
+      </div>
+
+      <!-- COLUMNA 3: HECHO / COMPLETADO -->
+      <div class="kanban-column" data-status="done">
+        <div class="column-header">
+          <span class="status-dot dot-done"></span>
+          <h3>Hecho / Completado</h3>
+          <span class="task-badge" id="count-done">0</span>
+        </div>
+        <div class="kanban-cards-container" id="cards-done"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL CREAR / EDITAR TARJETA KANBAN -->
+<div class="modal-overlay" id="kanban-modal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="modal-kanban-title"><i data-lucide="layout"></i> Crear Tarjeta</h3>
+      <button class="btn-close" onclick="closeKanbanModal()"><i data-lucide="x"></i></button>
+    </div>
+    <form id="kanban-form" onsubmit="handleSaveKanbanCard(event)">
+      <input type="hidden" id="kanban-card-id">
+
+      <div class="form-group">
+        <label for="kanban-title">Título de la Tarea / Entregable</label>
+        <input type="text" id="kanban-title" class="form-input" placeholder="Ej: Implementar Login JWT" required>
+      </div>
+
+      <div class="form-group">
+        <label for="kanban-desc">Descripción Detallada</label>
+        <textarea id="kanban-desc" class="form-input" rows="3" placeholder="Requisitos, notas adicionales..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="kanban-status">Etapa / Estado</label>
+          <select id="kanban-status" class="form-input" required>
+            <option value="todo">Por Hacer</option>
+            <option value="progress">En Desarrollo</option>
+            <option value="done">Completado</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kanban-priority">Prioridad</label>
+          <select id="kanban-priority" class="form-input" required>
+            <option value="baja">Baja</option>
+            <option value="media" selected>Media</option>
+            <option value="alta">Alta</option>
+            <option value="urgente">Urgente</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="kanban-assignee">Responsable / Encargado</label>
+          <input type="text" id="kanban-assignee" class="form-input" placeholder="Ej: Juan Pérez">
+        </div>
+        <div class="form-group">
+          <label for="kanban-points">Puntos (Esfuerzo)</label>
+          <input type="number" id="kanban-points" class="form-input" min="1" max="13" value="3">
+        </div>
+      </div>
+
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button type="button" class="btn btn-danger" id="btn-delete-card" onclick="handleDeleteKanbanCard()" style="display: none;">
+          <i data-lucide="trash-2"></i> Eliminar
+        </button>
+        <div style="display: flex; gap: 8px; margin-left: auto;">
+          <button type="button" class="btn btn-secondary" onclick="closeKanbanModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" style="width: auto;">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

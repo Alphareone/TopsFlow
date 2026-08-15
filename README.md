@@ -27,7 +27,7 @@ A diferencia de las herramientas de gestión tradicionales y saturadas de opcion
 
 El proyecto surge de una problemática común en la vida académica y profesional joven: **la fragmentación del tiempo y el sobreesfuerzo**. 
 
-Al intentar balancear múltiples compromisos —como ramos universitarios, proyectos de titulación (Capstone), trabajos a tiempo parcial o remoto ("pegas/Lopas") y la vida personal—, las herramientas existentes solían ser o demasiado rígidas o demasiado complejas.
+Al intentar balancear múltiples compromisos —como ramos universitarios, proyectos de titulación (Capstone), trabajos a tiempo parcial o remoto ("Trabajos / pegas / chambas") y la vida personal—, las herramientas existentes solían ser o demasiado rígidas o demasiado complejas.
 
 **T.o.p.s Flow** nace con la idea de romper los monolitos de software y crear un sistema **modular, liviano y personalizable**, donde cada persona pueda visualizar rápidamente su carga horaria, gestionar sus tareas en sprints ágiles y adaptar la plataforma a sus gustos estéticos.
 

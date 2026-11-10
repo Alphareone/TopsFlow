@@ -9,6 +9,12 @@
     "dev:backend": "npm run dev --workspace=apps/backend",
     "dev:frontend": "npm run dev --workspace=apps/frontend",
     "db:generate": "npm run db:generate --workspace=packages/database",
-    "db:push": "npm run db:push --workspace=packages/database"
+    "db:push": "npm run db:push --workspace=packages/database",
+    "build:frontend": "npm run build --workspace=apps/frontend",
+    "predeploy": "npm run build:frontend",
+    "deploy": "gh-pages -d apps/frontend/dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

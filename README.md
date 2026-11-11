@@ -66,64 +66,89 @@ npm (v9.0.0 o superior)
 Git
 
 (Opcional) Docker & Docker Compose (para ejecutar la base de datos PostgreSQL en contenedor)
+```
+## 🛠️ Instrucciones de Levantamiento Local
 
-🛠️ Instrucciones de Levantamiento Local
-1. Clonar el Repositorio
-Bash
-git clone [https://github.com/Alphareone/TopsFlow.git](https://github.com/Alphareone/TopsFlow.git)
+### 1. Clonar el Repositorio
+
+```bash
+git clone https://github.com/Alphareone/TopsFlow.git
 cd Tops-Flow-mvp
-2. Instalar Dependencias
+```
+
+### 2. Instalar Dependencias
+
 Dado que el proyecto utiliza Workspaces de npm, la instalación en la raíz instalará automáticamente las dependencias del frontend, backend y paquetes compartidos:
 
-Bash
+```bash
 npm install
-3. Configurar Variables de Entorno
-Crea un archivo .env en la raíz del proyecto (o dentro de apps/backend/ y packages/database/) tomando como base el siguiente modelo:
+```
 
-Fragmento de código
+### 3. Configurar Variables de Entorno
+
+Crea un archivo `.env` en la raíz del proyecto (o dentro de `apps/backend/` y `packages/database/`) tomando como base el siguiente modelo:
+
+```env
 # Servidor Backend
 PORT=5000
 JWT_SECRET=tu_secreto_super_seguro_jwt
 
 # Base de Datos PostgreSQL
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/topsflow_db?schema=public"
-4. Inicializar la Base de Datos (Opcional)
+```
+
+### 4. Inicializar la Base de Datos (Opcional)
+
 Si utilizas PostgreSQL vía Docker:
 
-Bash
+```bash
 # Iniciar contenedor de PostgreSQL
 docker-compose up -d
 
 # Generar cliente de Prisma y ejecutar migraciones
 npm run prisma:generate --workspace=packages/database
 npm run prisma:migrate --workspace=packages/database
-Nota: La aplicación frontend cuenta con un fallback activo a localStorage, permitiendo probar la interfaz completa y todas las funcionalidades interactivas sin requerir una conexión obligatoria a PostgreSQL.
+```
 
-5. Iniciar la Aplicación en Modo Desarrollo
+> **Nota:** La aplicación frontend cuenta con un fallback activo a `localStorage`, permitiendo probar la interfaz completa y todas las funcionalidades interactivas sin requerir una conexión obligatoria a PostgreSQL.
+
+### 5. Iniciar la Aplicación en Modo Desarrollo
+
 Ejecuta la suite de desarrollo en paralelo desde la raíz:
 
-Bash
+```bash
 # Iniciar Frontend (Vite)
 npm run dev --workspace=apps/frontend
-O si deseas levantar la aplicación compilandola y ejecutándola directamente:
+```
 
-Bash
+O si deseas levantar la aplicación compilándola y ejecutándola directamente:
+
+```bash
 npm run dev
+```
+
 El frontend estará disponible de inmediato en tu navegador en:
 👉 http://localhost:3000/ (o http://localhost:5173/ según puerto libre disponible).
 
-📦 Despliegue en GitHub Pages
+---
+
+## 📦 Despliegue en GitHub Pages
+
 El proyecto incluye la configuración para desplegar la SPA de React directamente a GitHub Pages:
 
-Bash
+```bash
 # 1. Ejecutar script de preparación de arquitectura
 node setup-deploy-ready.js
 
 # 2. Compilar y publicar en la rama gh-pages
 npm run deploy
-La aplicación en producción quedará publicada en:
+```
 
+La aplicación en producción quedará publicada en:
 👉 https://Alphareone.github.io/TopsFlow/
 
-📄 Licencia
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.

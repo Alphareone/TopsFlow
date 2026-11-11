@@ -1,0 +1,40 @@
+name: Publicar Frontend en GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Compilar Frontend
+        run: npm run build --workspace=apps/frontend
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Subir carpeta dist
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/frontend/dist
+
+      - name: Desplegar web
+        id: deployment
+        uses: actions/deploy-pages@v4
